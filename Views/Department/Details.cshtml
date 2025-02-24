@@ -1,0 +1,24 @@
+﻿@model Task6.Models.Department
+
+<div class="container mt-4">
+    <h2>Department Details</h2>
+    <hr />
+
+    <dl class="row">
+        <dt class="col-sm-3">Department Name:</dt>
+        <dd class="col-sm-9">@Model.Name</dd>
+
+        <dt class="col-sm-3">Manager:</dt>
+        <dd class="col-sm-9">@Model.ManagerName</dd>
+
+        <dt class="col-sm-3">Office Location:</dt>
+        <dd class="col-sm-9">@Model.OfficeLocation</dd>
+
+        <dt class="col-sm-3">Employee Count:</dt>
+        <dd class="col-sm-9">@Model.EmployeeCount</dd>
+    </dl>
+
+    <a href="@Url.Action("Index", "Department")" class="btn btn-secondary">Back to List</a>
+</div>
+
+
