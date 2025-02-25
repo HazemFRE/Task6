@@ -58,7 +58,7 @@ namespace Task6.Controllers
             }
             return View(department);
         }
-        [HttpPost]
+ 
         public ActionResult Delete(int Id)
         {
             var department = _context.Departments.Find(Id);
@@ -71,6 +71,23 @@ namespace Task6.Controllers
             _context.SaveChanges();
             return RedirectToAction(nameof(Index));
         }
-       
+
+        public ActionResult Edit(int Id)
+        {
+            var department = _context.Departments.Find(Id);
+            if (department == null)
+            {
+                return NotFound();
+            }
+            return View(department);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Department department)
+        {
+            _context.Departments.Update(department);
+            _context.SaveChanges();
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
